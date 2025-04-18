@@ -1,4 +1,5 @@
 {
+  "homepage": "https://aguyennon.github.io/spa-assignment/",
   "devDependencies": {
     "gh-pages": "^6.3.0",
     "handlebars-loader": "^1.7.3",
