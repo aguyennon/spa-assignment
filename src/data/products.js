@@ -5,6 +5,3 @@ module.exports = { products: [
 ]};
 
 
-
-
-// update to push to repo //ignore
