@@ -11,26 +11,28 @@ const routes = {
 
 function handleRoute() {
   const path = window.location.pathname;
-  const route = routes[path] || routes['/']; // Fallback to home
+  const route = routes[path] || routes['/']; 
   route();
 }
 
-// Handle navigation (e.g., from links)
+// Handle navigation 
 function navigate(path) {
   window.history.pushState({}, '', path);
   handleRoute();
 }
 
-// Initialize router
-window.addEventListener('popstate', handleRoute); // Back/forward buttons
+// Initializing the router
+window.addEventListener('popstate', handleRoute); 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.addEventListener('click', (e) => {
+    // Check if the clicked element has the data-link attribute 
+    // (Recently learned: https://developer.mozilla.org/en-US/docs/Web/API/Element/matches)
     if (e.target.matches('[data-link]')) {
       e.preventDefault();
       navigate(e.target.getAttribute('href'));
     }
   });
-  handleRoute(); // Load initial route
+  handleRoute(); // Load the initial route
 });
 
 export { navigate };
